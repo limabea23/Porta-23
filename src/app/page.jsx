@@ -16,7 +16,7 @@ export default function Home() {
 
                 <blockquote className="italic text-gray-300 border-l-4 border-pink-500 pl-4">"Nós temos uma escolha... de viver ou apenas existir." - Harry Styles</blockquote>
 
-                <Link href="/apiinfo">
+                <Link href="/drinks">
                     <button className="px-6 py-3 rounded-full bg-pink-600 hover:bg-pink-700 transition text-white font-semibold shadow-lg"> Entre. Descubra. Sinta. 🥂</button>
                 </Link>
             </div>

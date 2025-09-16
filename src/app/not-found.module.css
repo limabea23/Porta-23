@@ -5,17 +5,21 @@
     justify-content: center;
     text-align: center;
     height: 100vh;
+    background-color: black;
 }
 
 .title {
-    font-size: 2.5rem;
-    color: #ff9104;
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 0em;
 }
 
 .message {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    color:#ff2165;
+    color: #bd64ac;
+    letter-spacing: 0.1em;
 }
 
 .image {
@@ -24,7 +28,7 @@
 }
 
 .button {
-    background: linear-gradient(135deg, #f3900f, #ff097b);
+    background: linear-gradient(135deg, #bd64ac, #ff7fff);
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;

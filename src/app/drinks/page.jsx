@@ -4,10 +4,14 @@ import { useState } from "react";
 import axios from "axios";
 import styles from "./drink.module.css";
 
+import { useRouter } from "next/navigation"; 
+
 export default function Page() {
     const [drinks, setDrinks] = useState([]);
     const [loading, setLoading] = useState(false);
     const [drinkDetails, setDrinkDetails] = useState(null);
+
+    const router = useRouter();
 
     const buscarDrinks = async () => {
         setLoading(true);
@@ -53,28 +57,17 @@ export default function Page() {
                         <h2 className={styles.nomeDrink}>{drink.strDrink}</h2>
                         <p className={styles.tipoDrink}>{drink.strAlcoholic}</p>
 
-                        <button onClick={() => buscarDetalhesDrink(drink.idDrink)} className={styles.detalhes}>
+                        <button
+                            onClick={() => router.push(`/drinks/${drink.idDrink}`)}
+                            className={styles.detalhes}
+                        >
                             Ver Detalhes
                         </button>
                     </div>
                 ))}
             </div>
 
-            { drinkDetails && (
-            <div className={styles.detailsDrink}>
-                <h2 className={styles.tituloDrink}>{drinkDetails.strDrink}</h2>
-                <img
-                    src={drinkDetails.strDrinkThumb}
-                    alt={drinkDetails.strDrink}
-                    className={styles.imgDrink}
-                />
-                <p><strong>Categoria:</strong> {drinkDetails.strCategory}</p>
-                <p><strong>Tipo:</strong> {drinkDetails.strAlcoholic}</p>
-                <p><strong>Instruções:</strong> {drinkDetails.strInstructions}</p>
-            </div>
-            )
-            }
-
+            
         </div>
     );
 }

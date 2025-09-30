@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation"; 
 import axios from "axios";
-import styles from "./drink.module.css";
+import styles from ".././drink.module.css";
 
 export default function DrinkDetails() {
     const { id } = useParams(); 

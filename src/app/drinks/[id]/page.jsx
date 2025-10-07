@@ -5,6 +5,9 @@ import { useParams } from "next/navigation";
 import axios from "axios";
 import styles from ".././drink.module.css";
 
+import Header from "../../../../components/Header";
+import Footer from "../../../../components/Footer";
+
 export default function DrinkDetails() {
     const { id } = useParams(); 
     const [drinkDetails, setDrinkDetails] = useState(null);
@@ -27,6 +30,9 @@ export default function DrinkDetails() {
     }
 
     return (
+        <>
+        <Header />
+
         <div className={styles.detailsDrink}>
             <h2 className={styles.tituloDrink}>{drinkDetails.strDrink}</h2>
             <img
@@ -38,5 +44,8 @@ export default function DrinkDetails() {
             <p><strong>Tipo:</strong> {drinkDetails.strAlcoholic}</p>
             <p><strong>Instruções:</strong> {drinkDetails.strInstructions}</p>
         </div>
+
+        <Footer />
+        </>
     );
 }
